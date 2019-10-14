@@ -1,6 +1,14 @@
 
-let number1 = 1;
-let number2 = 2;
+let myDogsName = "My pet, her name is princy. I miss you a lot";
 
+console.log(myDogsName.__proto__);
 
-console.log(`Total is ${1 + 2}`);
+//console.log(myDogsName.toUpperCase());
+
+//console.log(myDogsName.length);
+
+//console.log(myDogsName.indexOf('y'));
+
+//console.log(myDogsName.lastIndexOf('y'));
+
+console.log(myDogsName.split(''));
