@@ -1,14 +1,7 @@
+const max = 6;
+const min = 2;
 
-let myDogsName = "My pet, her name is princy. I miss you a lot";
+let rand = Math.floor(Math.random() * (max - min + 1)) + min;
 
-console.log(myDogsName.__proto__);
+console.log(rand);
 
-//console.log(myDogsName.toUpperCase());
-
-//console.log(myDogsName.length);
-
-//console.log(myDogsName.indexOf('y'));
-
-//console.log(myDogsName.lastIndexOf('y'));
-
-console.log(myDogsName.split(''));
