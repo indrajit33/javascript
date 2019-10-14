@@ -1,7 +1,25 @@
-const max = 6;
-const min = 2;
+//Exercise 1:: 
 
-let rand = Math.floor(Math.random() * (max - min + 1)) + min;
+let x = 'I love loving your love';
 
-console.log(rand);
+console.log(x.length);
+
+console.log(x.indexOf('love'));
+
+console.log(x.lastIndexOf('love'));
+
+console.log(x.replace('love','bunny')); 
+
+console.log(x.charAt(12));
+
+let res = x.split(' ').reverse().join(' ');
+console.log(res);
+
+let y = [1, 22, 55, 33, 88];
+console.log( y.sort() );
+
+console.log( Math.max( (1, 22, 55, 33, 88) ) );
+
+
+
 
