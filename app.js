@@ -24,8 +24,9 @@ let bool = true;
 console.log(Number(bool));
 
 //Converting Dates to Numbers
-
 let d = new Date();
 console.log(Number(d));
+
+
 
 
