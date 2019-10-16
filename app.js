@@ -1,32 +1,52 @@
-//Converting Numbers to Strings
-let x = 10;
-console.log(typeof(x.toString()));
+//Exercise 2
 
-//Converting Booleans to Strings
-let y = true;
-console.log(typeof(y.toString()));
+//with for loop
 
-//Converting Dates to Strings
-let dt = Date();
-console.log(typeof(dt.toString()));
+/*
+function primeCheck(num){
 
-//Converting Strings to Numbers
-let str = 'This is a string';
-str = +str;
-console.log(str); // NaN
+	if(num === 1)
+		return false;
+	for(i = 2; i <= Math.floor(num/2); i++){
+		if(num % i == 0){
+			return false;
+			exit();
+		}
+	}
 
-let str1 = '100';
-str1 = +str1;
-console.log(str1);
+	return true;
+}
 
-//Converting Booleans to Numbers
-let bool = true;
-console.log(Number(bool));
-
-//Converting Dates to Numbers
-let d = new Date();
-console.log(Number(d));
+console.log(primeCheck(36));
 
 
+*/
 
+//with while loop
 
+function primeCheck(num){
+
+	if(num === 1)
+		return false;
+
+	i = 2; 
+	while(i <= Math.floor(num/2)){
+
+		if(num % i == 0){
+			return false;
+			exit();
+		}
+		i++;
+	}
+
+	return true;
+}
+
+if(primeCheck(4))
+{
+	console.log('Is Prime');
+}
+else
+{
+	console.log('Not Prime');
+}
