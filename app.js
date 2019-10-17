@@ -1,52 +1,23 @@
-//Exercise 2
 
-//with for loop
+//Array
 
-/*
-function primeCheck(num){
+//let glist = ['One','Two','Three','Two','Four'];
 
-	if(num === 1)
-		return false;
-	for(i = 2; i <= Math.floor(num/2); i++){
-		if(num % i == 0){
-			return false;
-			exit();
-		}
-	}
-
-	return true;
-}
-
-console.log(primeCheck(36));
+//console.log(Array.isArray(glist));
 
 
-*/
+//console.log(glist.constructor === Array);
 
-//with while loop
+//console.log(glist.length);
 
-function primeCheck(num){
+//console.log(glist.indexOf('Two',2));
 
-	if(num === 1)
-		return false;
 
-	i = 2; 
-	while(i <= Math.floor(num/2)){
+const glist = ['One','Two','Three','Two','Four'];
 
-		if(num % i == 0){
-			return false;
-			exit();
-		}
-		i++;
-	}
+glist[1] = '2';
 
-	return true;
-}
+console.log(glist);
 
-if(primeCheck(4))
-{
-	console.log('Is Prime');
-}
-else
-{
-	console.log('Not Prime');
-}
+
+
