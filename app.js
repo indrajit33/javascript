@@ -1,23 +1,38 @@
 
-//Array
+//Array mutated
 
-//let glist = ['One','Two','Three','Two','Four'];
+const glist = ['one','two','three'];
 
-//console.log(Array.isArray(glist));
-
-
-//console.log(glist.constructor === Array);
-
-//console.log(glist.length);
-
-//console.log(glist.indexOf('Two',2));
-
-
-const glist = ['One','Two','Three','Two','Four'];
-
-glist[1] = '2';
+glist.push('four');
 
 console.log(glist);
+
+let x = glist.pop();
+
+console.log(x);
+
+console.log(glist);
+
+
+// Now to add something in the front of an array
+
+glist.unshift('zero');
+
+console.log(glist);
+
+// to remove
+
+glist.shift();
+
+//To add or remove items in the middle
+
+console.log(glist);
+glist.splice(1,0,"2");
+console.log(glist);
+
+
+
+
 
 
 
