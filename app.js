@@ -1,35 +1,38 @@
 
 //Array mutated
 
-const glist = ['one','two','three'];
-
-glist.push('four');
-
-console.log(glist);
-
-let x = glist.pop();
-
-console.log(x);
-
-console.log(glist);
+const arlist = [  [1,2,3],
+				  [4,5,6],
+				  [7,8,9]
+			  ];
 
 
-// Now to add something in the front of an array
+			  //for loop
+			  let len = arlist.length;
+			  for(let i =0; i<(len); i++){
 
-glist.unshift('zero');
+			  	for(let j=0; j<arlist[i].length; j++){
 
-console.log(glist);
+			  		console.log(arlist[i][j]);
+			  	}
+			  }
 
-// to remove
+			  //foreach loop
+			  arlist.forEach( (value,index) => {
 
-glist.shift();
+			  		value.forEach((v,i)=>{
+			  			console.log(`${i} ==> ${v}`);
+			  		})
+			  });
 
-//To add or remove items in the middle
+			  //for with entries
 
-console.log(glist);
-glist.splice(1,0,"2");
-console.log(glist);
+			  for(let [index,value] of arlist.entries()){
+			  	for(let [ind,val] of value.entries()){
 
+			  		console.log(`${ind} => ${val}`);
+			  	}
+			  }
 
 
 
