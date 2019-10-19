@@ -1,24 +1,34 @@
 
-//Sets
+//Maps
 
-let set = new Set();
- set.add('red');
+//const obj = {};
 
- set.has('red');
-//true
-set.delete('red');
-//true
-set.has('red');
-//false
+const obj = new Map();
+
+const key1 = {};
+const key2 = {name:'Jone'};
+const key3 = {num:1};
 
 
-let arr = [1,2,3,4,4,3,3];
+/*
+obj[key1]='Val1';
+obj[key2]='Val2';
+obj[key3]='Val3';
 
-//console.log(arr);
+In am object, object as keys is not possible. For that we needs map.
+*/
 
-let x = new Set(arr);
+obj.set(key1,'Val1');
+obj.set(key2,'Val2');
+obj.set(key3,'Val3');
 
-console.log(x); // 1,2,3,4
+//console.log(obj.get(key1));
 
-// It will remove the duplicate value
+//iterate an map with for of
+for(let o of obj){
+	console.log(o[1]);
+}
+
+
+
 
