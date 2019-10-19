@@ -31,4 +31,18 @@ const x = {y:{},z:{}};
 //array of object
 const y = [{},{}];
 
+//Itaration of objects
+//for in 
+for(let profileKeys in profile){
+	console.log(` Key = ${profileKeys} and value = ${profile[profileKeys]}`);
+}
+
+//for of
+for(let profileK of Object.keys(profile)){
+	console.log(` Key = ${profileK} and value = ${profile[profileK]}`);
+}
+
+
+
+
 
