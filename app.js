@@ -17,13 +17,12 @@ console.log(addE(2,1));
 let addS = function(){
 
 	let sum = 0;
-	for(let obj of arguments){
-		sum += obj;
+	for(let val in Object.keys(arguments)){
+		sum += arguments[val];
 	}
 
 	return sum;
 } 
 
-let x = addS(1,2,3,4);
-
+let x = addS(1,2,3,4,5);
 console.log(x);
