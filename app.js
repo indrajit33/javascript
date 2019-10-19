@@ -1,16 +1,24 @@
 
-// Destructuring of object.
-const obj = {x:1,y:2};
+//Sets
 
-let {x,y} = obj;
+let set = new Set();
+ set.add('red');
 
-console.log(`${x}  ${y}`);
+ set.has('red');
+//true
+set.delete('red');
+//true
+set.has('red');
+//false
 
 
-// Destructuring of array.
-const arr = [1 , 2 ];
+let arr = [1,2,3,4,4,3,3];
 
-let [a,b] = arr;
+//console.log(arr);
 
-console.log(`${a}  ${b}`);
+let x = new Set(arr);
+
+console.log(x); // 1,2,3,4
+
+// It will remove the duplicate value
 
