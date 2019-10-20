@@ -1,39 +1,39 @@
-//Map Methods
+//Array function
+//some function
 
-//Map method creates a new array (with same number of elements) 
-//with the results of calling a function for every array element.
+//The some() method checks if any of the elements in an array pass a test (provided as a function).
 
-//Note:: Map takes a full array and returns a full array.
+let arr = [1,15,30,18];
 
-let arr = [2,3,4];
-
-let pow = function(e){
-	return e**2;
+const check = function(e){
+	return e >= 18 ? true : false;
 }
 
-let res = arr.map(pow);
+let res = arr.some(check);
 
 console.log(res);
 
-//Fliter method
-//It takes a fill array and returns a part of it
+// It can be applied in objects as well
+let arr1 = [ {name:'Indrajit',age:33}, {name:'udaya',age:45} ];
 
-let evenCheck = function(e){
-	if(e%2 == 0){
-		return e;
-	}
+
+const checkobj = function(e){
+	return e.age >= 18 ? true : false;
 }
 
-res = arr.filter(evenCheck);
-console.log(res);
+let res1 = arr1.some(checkobj);
+console.log(res1);
 
-//Reduce method
+//Every function
 
-let arr2 = [{num:1},{num:2},{num:3}];
+//The every() method checks if all of the elements in an array pass a test (provided as a function).
+//If all passes then it will give true else false.
 
-let rd = function(acc, e){
-	return acc + e.num;
-} 
+let arr2 = [ {name:'Indrajit',age:17}, {name:'udaya',age:45} ];
+const checkobjE = function(e){
+	return e.age >= 18 ? true : false;
+}
 
-res = arr2.reduce(rd, 0);
-console.log(res);
+let res2 = arr2.every(checkobjE);
+console.log(res2);
+
