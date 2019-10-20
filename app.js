@@ -1,12 +1,32 @@
-//Default Parameters
+//Callback Function
 
-let func = function(a=0,b=0){
+
+
+const calc = function(cb,num1=0,num2=0){
+	return cb(num1,num2);
+}
+
+let add = function(a=0,b=0){
 	return a+b;
 }
 
-console.log(func(undefined,2));
+let sub = function(a=0,b=0){
+	return a - b;
+}
 
-//a=0 & b=0 are the default parameters, if we do not put =0 then it's default value will be undefined.
-// If we have to pass an array then default parameter will be like a = []
+let result = calc(sub,2,3);
+console.log(result);
+
+//callback function is a function where function is passed as parameter.
+
+let result2 = calc(function(a=0,b=0){ 
+	return a**b;
+},2,3);
+
+console.log(result2);
+
+// In callback function we can pass anonymous function like above.
+
+
 
 
