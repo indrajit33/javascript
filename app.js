@@ -1,27 +1,12 @@
-//Spread Operator.
+//Default Parameters
 
-let arr1 = [1,2,3];
-let arr2 = [3,4,6];
-
-let arr = [...arr1,...arr2];
-console.log(arr);
-
-// It merges 2 array, please remember that duplicate elements are not removed.
-let obj1 = {name:"Indrajit",age:33};
-let obj2 = {age:34};
-
-let obj = {...obj1, ...obj2};
-console.log(obj);
-
-//It merges the objects as well, since object has got keys hence for the same key it will override.
-// age in obj2 will override obj1....As obj2 is in left side.
-
-let func = function(...num){
-	console.log(num);
+let func = function(a=0,b=0){
+	return a+b;
 }
 
-func(1,2,3,4);
+console.log(func(undefined,2));
 
-//With spread operator we can catch multiple parameters like in the above example. The values 
-//will be in array in num variable.
+//a=0 & b=0 are the default parameters, if we do not put =0 then it's default value will be undefined.
+// If we have to pass an array then default parameter will be like a = []
+
 
