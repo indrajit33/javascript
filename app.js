@@ -1,32 +1,39 @@
-//Callback Function
+//Map Methods
 
+//Map method creates a new array (with same number of elements) 
+//with the results of calling a function for every array element.
 
+//Note:: Map takes a full array and returns a full array.
 
-const calc = function(cb,num1=0,num2=0){
-	return cb(num1,num2);
+let arr = [2,3,4];
+
+let pow = function(e){
+	return e**2;
 }
 
-let add = function(a=0,b=0){
-	return a+b;
+let res = arr.map(pow);
+
+console.log(res);
+
+//Fliter method
+//It takes a fill array and returns a part of it
+
+let evenCheck = function(e){
+	if(e%2 == 0){
+		return e;
+	}
 }
 
-let sub = function(a=0,b=0){
-	return a - b;
-}
+res = arr.filter(evenCheck);
+console.log(res);
 
-let result = calc(sub,2,3);
-console.log(result);
+//Reduce method
 
-//callback function is a function where function is passed as parameter.
+let arr2 = [{num:1},{num:2},{num:3}];
 
-let result2 = calc(function(a=0,b=0){ 
-	return a**b;
-},2,3);
+let rd = function(acc, e){
+	return acc + e.num;
+} 
 
-console.log(result2);
-
-// In callback function we can pass anonymous function like above.
-
-
-
-
+res = arr2.reduce(rd, 0);
+console.log(res);
