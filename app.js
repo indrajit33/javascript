@@ -1,4 +1,4 @@
-//Spread Operator
+//Spread Operator.
 
 let arr1 = [1,2,3];
 let arr2 = [3,4,6];
