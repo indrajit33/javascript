@@ -1,28 +1,27 @@
-// Function Declaration
+//Spread Operator
 
-function add(num1,num2){
-	return num1 + num2;
+let arr1 = [1,2,3];
+let arr2 = [3,4,6];
+
+let arr = [...arr1,...arr2];
+console.log(arr);
+
+// It merges 2 array, please remember that duplicate elements are not removed.
+let obj1 = {name:"Indrajit",age:33};
+let obj2 = {age:34};
+
+let obj = {...obj1, ...obj2};
+console.log(obj);
+
+//It merges the objects as well, since object has got keys hence for the same key it will override.
+// age in obj2 will override obj1....As obj2 is in left side.
+
+let func = function(...num){
+	console.log(num);
 }
 
-console.log(add(2,1));
+func(1,2,3,4);
 
-//Function expression
-let addE = function(num1,num2){
-	return num1 + num2;
-}
+//With spread operator we can catch multiple parameters like in the above example. The values 
+//will be in array in num variable.
 
-console.log(addE(2,1));
-
-
-let addS = function(){
-
-	let sum = 0;
-	for(let val in Object.keys(arguments)){
-		sum += arguments[val];
-	}
-
-	return sum;
-} 
-
-let x = addS(1,2,3,4,5);
-console.log(x);
