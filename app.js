@@ -1,39 +1,44 @@
-//Array function
-//some function
 
-//The some() method checks if any of the elements in an array pass a test (provided as a function).
+// Part 1
 
-let arr = [1,15,30,18];
-
-const check = function(e){
-	return e >= 18 ? true : false;
+const calc = function(n,func){
+	return func(n);
 }
 
-let res = arr.some(check);
+let add = function(n){
+	let sum = 0;
+	for(let i=0; i<=n; i++){
+		sum += i;
+	}
 
+	return sum;
+}
+
+let mul = function(n){
+	let into = 1;
+	for(let i=1; i<=n; i++){
+		into *= i;
+	}
+	return into;
+}
+
+let minus = function(n){
+	let into = 1;
+	for(let i=2; i<=n; i++){
+		into = into - i;
+	}
+	return into;
+} 
+
+let res = calc(4,minus);
 console.log(res);
 
-// It can be applied in objects as well
-let arr1 = [ {name:'Indrajit',age:33}, {name:'udaya',age:45} ];
-
-
-const checkobj = function(e){
-	return e.age >= 18 ? true : false;
+//Part 2
+let rd = function(acc,e){
+	return acc *= e;
 }
 
-let res1 = arr1.some(checkobj);
-console.log(res1);
+let num = [1,2,3,4];
+let res2 = num.reduce(rd,1);
 
-//Every function
-
-//The every() method checks if all of the elements in an array pass a test (provided as a function).
-//If all passes then it will give true else false.
-
-let arr2 = [ {name:'Indrajit',age:17}, {name:'udaya',age:45} ];
-const checkobjE = function(e){
-	return e.age >= 18 ? true : false;
-}
-
-let res2 = arr2.every(checkobjE);
 console.log(res2);
-
