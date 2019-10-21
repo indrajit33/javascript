@@ -1,44 +1,15 @@
+//prototypal inheritance
+const Car = function(color){  //We used capital letter to denote class.
+	if (!new.target) throw 'Car() must be called with new';
+	this._color = color;
+};
 
-// Part 1
+const blueCar = new Car('Blue'); //We used new keyword to create a object.
+console.log(blueCar._color); 
 
-const calc = function(n,func){
-	return func(n);
-}
+//Now if we call a class without new keyword,then the class will act like a function. And color
+//will be set to window._color not in this._color, since object is not created so this will not work.
 
-let add = function(n){
-	let sum = 0;
-	for(let i=0; i<=n; i++){
-		sum += i;
-	}
-
-	return sum;
-}
-
-let mul = function(n){
-	let into = 1;
-	for(let i=1; i<=n; i++){
-		into *= i;
-	}
-	return into;
-}
-
-let minus = function(n){
-	let into = 1;
-	for(let i=2; i<=n; i++){
-		into = into - i;
-	}
-	return into;
-} 
-
-let res = calc(4,minus);
-console.log(res);
-
-//Part 2
-let rd = function(acc,e){
-	return acc *= e;
-}
-
-let num = [1,2,3,4];
-let res2 = num.reduce(rd,1);
-
-console.log(res2);
+const redCar = Car('red'); 
+//console.log(redCar._color); // undefined
+console.log(window._color); //red
