@@ -1,5 +1,12 @@
 // Arrow function
 
+/*
+syntax
+
+const func = ()=>{};
+
+*/
+
     let People = function(person, age) { 
 
         this.person = person; 
