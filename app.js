@@ -25,13 +25,18 @@ ToyCar.prototype.super = function(){
 	return this.getColor();
 }
 
+ToyCar.prototype.setcolor = function(color){
+	return this._color = color;
+}
+
 const greyCar = new Car('Grey');
 console.log(greyCar.getColor());
 
 const suvToyCar = new ToyCar('Yellow','SUV');
 console.dir(suvToyCar.getColor());
 
-console.dir(suvToyCar.super());
+suvToyCar.setcolor('Blue');
+console.log(suvToyCar.super());
 
 /*
 Note:: Here Car is the parent class and ToyCar is the child class. We are extending the child class from the parent 
