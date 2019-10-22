@@ -1,49 +1,25 @@
-//prototypal inheritance
-const Car = function(color){  //We used capital letter to denote class.
-	//if (!new.target) throw 'Car() must be called with new';
-	this._color = color;
-};
+//Classes
 
-Car.prototype.getColor = function(){
-	return this._color;
+class Car{
+
+	constructor(color){
+		this._color = color;
+	}
+
+	getColor(){
+		return this._color;
+	}
+
+	setColor(color){
+		this._color = color;
+	}
 }
 
-const ToyCar = function(color,model){
-	Car.call(this,color);
-	this._model = model;
-}
+let blueCar = new Car('Blue'); 
 
-ToyCar.prototype = Object.create(Car.prototype);
+console.log(blueCar.getColor());
 
-ToyCar.prototype.getModel = function(){
-	return this._model;
-}
+blueCar.setColor('Red');
 
-ToyCar.prototype.super = function(){
-	//Car.call(this,color); did not worked
+console.log(blueCar.getColor());
 
-	return this.getColor();
-}
-
-ToyCar.prototype.setcolor = function(color){
-	return this._color = color;
-}
-
-const greyCar = new Car('Grey');
-console.log(greyCar.getColor());
-
-const suvToyCar = new ToyCar('Yellow','SUV');
-console.dir(suvToyCar.getColor());
-
-suvToyCar.setcolor('Blue');
-console.log(suvToyCar.super());
-
-/*
-Note:: Here Car is the parent class and ToyCar is the child class. We are extending the child class from the parent 
-class by Toycar.prototype = Object.create(Car.prototype); 
-
-Here we are replacing the prototype of child class (ToyCar) with the prototype of parent class.
-
-Now to call the constructor of parent class from the child class constructor we use Car.call(this,color).
-
-*/
