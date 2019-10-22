@@ -1,40 +1,33 @@
-//Sub classes
+// Arrow function
 
-class Car{
+    let People = function(person, age) { 
 
-	constructor(color){
-		this._color = color;
-	}
+        this.person = person; 
+        this.age = age; 
+        this.info = function() { 
+  
+         // logs People 
+         document.write(this); 
 
-	getColor(){
-		return this._color;
-	}
+         console.dir(this);
+  
+         setTimeout(function() { 
+            /*
+            In case of normal function this refers to the scope inside the current function, Hence in the result
+            it is showing undefined.
+            */
+           document.write(this.person + " is " + this.age +  " years old "); //undefined is undefined years old
+          }, 3000); 
 
-	setColor(color){
-		this._color = color;
-	}
-}
-
-class ToyCar extends Car{
-/*
-Here the construtor in the clild class is mandatary, since it's parent class has a constructor and it takes color 
-as parameter. So using super() function we have to set the color in it's parent class.
-
-Here in the back the prototypal inheritance is running
-*/
-	constructor(color,model){
-		super(color);
-		this._model = model;
-	}
-
-	getModel(){
-		return this._model;
-	}
-}
-
-let toyC = new ToyCar('Blue','SUV');
-
-console.dir(toyC);
-
-console.log(` Color:: ${toyC.getColor()}  Model:: ${toyC.getModel()}`);
+         setTimeout(() => { 
+            /*
+			In case of Arrow function this refers to the laxical scope of the current function.
+            */
+           document.write(` ${this.person}  ${this.age}  years old`); //John 21 years old
+          }, 3000); 
+        } 
+    }  
+   let person1 = new People('John', 21); 
+  
+person1.info(); 
 
