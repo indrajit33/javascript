@@ -1,4 +1,4 @@
-//Classes
+//Sub classes
 
 class Car{
 
@@ -15,11 +15,26 @@ class Car{
 	}
 }
 
-let blueCar = new Car('Blue'); 
+class ToyCar extends Car{
+/*
+Here the construtor in the clild class is mandatary, since it's parent class has a constructor and it takes color 
+as parameter. So using super() function we have to set the color in it's parent class.
 
-console.log(blueCar.getColor());
+Here in the back the prototypal inheritance is running
+*/
+	constructor(color,model){
+		super(color);
+		this._model = model;
+	}
 
-blueCar.setColor('Red');
+	getModel(){
+		return this._model;
+	}
+}
 
-console.log(blueCar.getColor());
+let toyC = new ToyCar('Blue','SUV');
+
+console.dir(toyC);
+
+console.log(` Color:: ${toyC.getColor()}  Model:: ${toyC.getModel()}`);
 
