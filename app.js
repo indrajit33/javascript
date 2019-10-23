@@ -1,25 +1,28 @@
-// Object Litaral
+// Call, Apply & Bind 
 
 const profile = {
   name: "john",
-  children: [
-    {
-      name: "peter",
-      getName() {
-        return this.name;
-      }
-    },
-    { name: "jill" }
-  ],
-  getName() { // here in this function it has the access of all the variable in the same level.
-    return this.name;
-  }
+  age:20,
 };
 
+const setProfile = function(name,age){
+	this.name = name;
+	this.age = age;
+}
 
-//console.log(profile.getName());
-//console.log(profile.children[0].getName());
-const getNameLoose = profile.getName;
-console.log(getNameLoose());
+//Call
+setProfile.call(profile,'Indrajit',34);
+console.log(profile);
+
+//Apply 
+const params = ['Indrajit',34]
+setProfile.apply(profile,params);
+console.log(profile);
+
+//Bind
+
+const newProfile = setProfile.bind(profile);
+newProfile("Indrajit", 34);
+console.log(profile);
 
 
