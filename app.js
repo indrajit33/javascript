@@ -1,40 +1,25 @@
-// Arrow function
+// Object Litaral
 
-/*
-syntax
+const profile = {
+  name: "john",
+  children: [
+    {
+      name: "peter",
+      getName() {
+        return this.name;
+      }
+    },
+    { name: "jill" }
+  ],
+  getName() { // here in this function it has the access of all the variable in the same level.
+    return this.name;
+  }
+};
 
-const func = ()=>{};
 
-*/
+//console.log(profile.getName());
+//console.log(profile.children[0].getName());
+const getNameLoose = profile.getName;
+console.log(getNameLoose());
 
-    let People = function(person, age) { 
-
-        this.person = person; 
-        this.age = age; 
-        this.info = function() { 
-  
-         // logs People 
-         document.write(this); 
-
-         console.dir(this);
-  
-         setTimeout(function() { 
-            /*
-            In case of normal function this refers to the scope inside the current function, Hence in the result
-            it is showing undefined.
-            */
-           document.write(this.person + " is " + this.age +  " years old "); //undefined is undefined years old
-          }, 3000); 
-
-         setTimeout(() => { 
-            /*
-			In case of Arrow function this refers to the laxical scope of the current function.
-            */
-           document.write(` ${this.person}  ${this.age}  years old`); //John 21 years old
-          }, 3000); 
-        } 
-    }  
-   let person1 = new People('John', 21); 
-  
-person1.info(); 
 
