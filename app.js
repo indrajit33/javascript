@@ -1,42 +1,5 @@
 //Closure
 
-
-//Case 1
-/*
-here the counter will be incremented every time the add() function is called, But the problem is since the counter
-variable is in global scope that is why any code can change the counter.
-
-var counter = 0;
-
-function add() {
-  counter += 1;
-}
-
-add();
-add();
-add();
-*/
-
-//Case 2
-
-/*
-Here the problem is, whenever the function is called the counter is set as 0.
-
-var counter = 0;
-
-function add() {
-  var counter = 0;
-  counter += 1;
-}
-
-add();
-add();
-add();
-
-*/
-
-//In order to solve the problem we have to return the function that increments the counter without reseting it.
-
 const func = (init) =>{
 
   let counter = init;
@@ -84,6 +47,9 @@ varX: ()=> { return counter += 1; }
 
 Closure is created when a child function [ add() ]
 keeps the environment of the parent scope, even after the parent function has already executed.
+
+here in this example the function func() got executed in line no 14, but if we see line no 15,18 & 22
+we will see that the child function(add) keep on executing keeping the latest value of the counter intact. 
 
 more details ... https://www.geeksforgeeks.org/closure-in-javascript/
 
