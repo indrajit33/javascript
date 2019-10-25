@@ -1,36 +1,15 @@
-//Closure
+//setTimeout  and setInterval
 
-const func = (init) =>{
+let intervalID;;
 
-  let counter = init;
+intervalID = window.setInterval(() => {
+  console.log(1);
+}, 2000);
 
-  let add = function(){
-    counter += 1;
-    return this;
-  };
-
-  let subst = function(){
-    counter -= 1;
-    return this;
-  };
-
-  let print = function(){
-    return counter;
-  };
-
-  return {add,subst,print};
-}
-
-const x = func(2);
-
-let y = x.add().add().subst().print();
-
-console.log(y);
-
-/*
- here when the add() function is called then the object(this) is returned.
- Then it becomes this.add().subst().print() and so on.
-*/
+console.log(intervalID)
+window.setTimeout(() => {
+  clearInterval(intervalID);
+},2001);
 
 
 
