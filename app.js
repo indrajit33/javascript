@@ -23,9 +23,14 @@ const func = (init) =>{
 
 const x = func(2);
 
-let y = x.add().add().add().subst().print();
+let y = x.add().add().subst().print();
 
 console.log(y);
+
+/*
+ here when the add() function is called then the object(this) is returned.
+ Then it becomes this.add().subst().print() and so on.
+*/
 
 
 
