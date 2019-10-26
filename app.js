@@ -64,6 +64,7 @@ Promise.all([willCleanTheRoom,removeGarbage,getrewards]).then((res) => {
 
 /*
 
+
 Syntax of promise
 ==================
 
