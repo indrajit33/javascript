@@ -1,5 +1,7 @@
 //Promise
 
+const getData = async() => {
+
 const willCleanTheRoom = new Promise( (resolve,reject) => {
 
   const roomCleaningStatus = true;
@@ -16,17 +18,22 @@ const removeGarbage = new Promise( ( resolve, reject )=>{
 
   const removeGarbageStatus = true;
 
-  if(removeGarbageStatus){
-    resolve('Garbage removed');
-  }else{
-    resolve('Garbage not removed');
-  }
+  setTimeout( ()=>{
+
+    if(removeGarbageStatus){
+      resolve('Garbage removed');
+    }else{
+      resolve('Garbage not removed');
+    }
+
+  },5000);
+
 
 });
 
 const getrewards = new Promise( ( resolve, reject ) => {
 
-  const getRewardStatus = false;
+  const getRewardStatus = true;
 
   if(getRewardStatus){
     resolve('Reward Given');
@@ -35,58 +42,30 @@ const getrewards = new Promise( ( resolve, reject ) => {
   }
 });
 
-willCleanTheRoom.then((res) => {
-  console.log(res);
-  return removeGarbage;
+let x = await willCleanTheRoom;
+let y = await removeGarbage;
+let z = await getrewards;
 
-}).then((res) => {
-  console.log(res);
-  return getrewards;
+console.log(x);
 
-}).then((res)=>{
-  console.log(res);
+console.log(y);
 
-}).catch(function(res){
-  console.log(res);
+console.log(z);
 
-}).finally(function(){
-  console.log('Final');
+}
 
-});
-
-//Promise all
-
-Promise.all([willCleanTheRoom,removeGarbage,getrewards]).then((res) => {
-  console.log(res);
-}).catch((res)=>{
-  console.log(res);
-});
+getData();
 
 /*
 
+https://www.geeksforgeeks.org/async-await-function-in-javascript/
 
-Syntax of promise
-==================
+It wait's for the result of 1st promise to come and then 2nd promise will get executed.
 
-let x = function(resolve,reject){
-  
-  if(true)
-   resolve(' xx  xx');
-  else
-   reject(' yy  yy');
-}
-
-const nameOfpromise = new Promise(x);
-
-
-Call a promise
-==============
-
-nameOfpromise.then().catch().final();
-
-then() ,catch() ,final() all the methods takes a function(res){} as parameter.  And this res contain the message that the promise send.
 
 */
+
+
 
 
 
