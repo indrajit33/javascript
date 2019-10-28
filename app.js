@@ -1,25 +1,22 @@
-// Debounce function
+// Throttle function
 
 window.onload = function(){
 
-  document.getElementById("myid").addEventListener('click', debounce(() => {
+  document.getElementById("myid").addEventListener('click', throttle(() => {
       console.log('Clicked');
     }, 2000 ) );
     
 
 
-  function debounce(fn, delay=2000){
+  function throttle(fn, delay=2000){
 
-    let debounceTimer;
-    //This is the callback in the addEventListener.
-    return function(){
-      //Resets the timmer overtime the function being called.
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout( ()=>{ 
-        this.style.color = 'blue';
-        fn(); 
-      }, delay);
-    }
+  const now = new Date().getTime();
+  let last = 0;
+  if (now - last < delay) {
+    return;
+  }
+   last = now;
+    return fn();
   }
 
 }
