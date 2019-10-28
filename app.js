@@ -1,23 +1,31 @@
-// Object.fromEntries()
+// flat and flatMap
 
-//Map
-const myMap = new Map();
+const arr = [1,2,[3],[[[[[4]]]]]];
 
-myMap.set('whiskey','Vat 69');
-myMap.set('whiskey','Black Dog');
+let newArr = arr.flat(Infinity);
+console.log(newArr);
 
-console.log(myMap);
+const arr1 = ['I love you','You love me'];
 
-//Convert Map to Object
-const myObj = Object.fromEntries(myMap);
-console.log(myObj);
+let res = arr1.map( ( val, indx )=> val.split(' ') );
+console.log(res);
+/*
+[Array(3), Array(3)]
+0: (3) ["I", "love", "you"]
+1: (3) ["You", "love", "me"]
+length: 2
+__proto__: Array(0)
+*/
 
-//Array
-const arr = [['whiskey','Vat 69'],['whiskey','Black Dog']];
-//Convert Array to Object
-const myObj1 = Object.fromEntries(arr);
-console.log(myObj1);
+res = res.flat();
+console.log(res);
 
-//Note the array should always be multi-dimention
+
+// This can be achived in 1 line with flatMap
+let res1 = arr1.flatMap( ( val, indx )=> val.split(' ') );
+console.log(res1);
+
+
+
 
 
