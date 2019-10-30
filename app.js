@@ -20,7 +20,7 @@ glist.unshift('zero');
 
 console.log(glist);
 
-// to remove
+// to remove element from front
 
 glist.shift();
 
